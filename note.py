@@ -73,6 +73,10 @@ l = [1,2,3,4,5,6,7,8,9]
 # 從x開始往y方向根據步階z一個一個取出來丟到新的list，一直取到y的前一個，如果y-x跟z的正負號不同，會直接回傳空list
 # z < 0 : x預設最後一個，y預設第一個
 # z > 0 : 反之亦然
+# z沒填預設都是 +1
+
+l[3:0] = ["Q"] 
+# l會變[1,2,3,"Q",4,5,6,7,8,9]，會什麼可以用這樣來實現插入?
 
 # ----------------------------------------------------------
 # Python特殊语法：filter、map、reduce、lambda 
@@ -90,7 +94,7 @@ print 5 << 1  # Left Shift
 print 8 & 5   # Bitwise AND
 print 9 | 4   # Bitwise OR
 print 12 ^ 42 # Bitwise XOR
-print ~88     # Bitwise NOT
+print ~88     # Bitwise NOT (這個是補數)
 bin(x) # 用string回傳x的２進位表示式
 oct(x) # 用string回傳x的８進位表示式
 hex(x) # 用string回傳x的16進位表示式
@@ -99,3 +103,41 @@ hex(x) # 用string回傳x的16進位表示式
 int("10") # 回傳十進位整數10
 int("10", 2) # 回傳十進位整數2，後面參數2表示第一個參數是用什麼進位來表示的
 # int("10", X) # 回傳X進位的10轉成10進位後的值
+
+# ----------------------------------------------------------
+# class的繼承
+class A():
+    def func(self):
+        pass
+class B(A):
+    def func(self):
+        super(B, self).func() # B的super用法，在B call A的funcution參數就不用加self了
+    pass
+#class B(A)這表示B是繼承A類
+
+# 如果沒有繼承任何class，預設是繼承object
+class A:
+    pass
+# 相當於
+class A(object):
+    pass
+# ----------------------------------------------------------
+# python 支援分數
+# import fractions
+# http://www.cnblogs.com/h82258652/p/4000442.html
+
+# ----------------------------------------------------------
+# function的參數給預設值會有call by reference的情形
+def func(a = 0, b = [0]):
+    a += 1
+    print(a)
+    b[0] += 1
+    print(b)
+
+func() # a = 1, b = [1]
+func() # a = 1, b = [2]
+func() # a = 1, b = [3]
+
+# ----------------------------------------------------------
+# python 的全域變數跟區域變數?
+# 讀檔存檔是Buffering Data
