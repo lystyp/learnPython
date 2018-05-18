@@ -161,3 +161,13 @@ func() # a = 1, b = [3]
 # ----------------------------------------------------------
 # python 的全域變數跟區域變數?
 # 讀檔存檔是Buffering Data
+
+# ----------------------------------------------------------
+# python 的 thread、threading、join、lock
+# threading > http://blog.30cm.net/2017/02/01/Python-%E6%B7%BA%E8%AB%87%E5%A4%9A%E5%9F%B7%E8%A1%8C%E7%B7%92-1/
+# join > https://blog.csdn.net/zhiyuan_2007/article/details/48807761
+# lock http://yoyzhou.github.io/blog/2013/02/28/python-threads-synchronization-locks/
+# 或 http://puremonkey2010.blogspot.tw/2012/07/python-python-threading.html
+# 上面lock第一篇很神
+# 為什麼需要RLock ? > https://blog.csdn.net/karchar/article/details/52372702
+# 可以做好幾個lock來給不同thread用嗎
