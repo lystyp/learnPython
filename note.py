@@ -114,7 +114,8 @@ print 5 << 1  # Left Shift
 print 8 & 5   # Bitwise AND
 print 9 | 4   # Bitwise OR
 print 12 ^ 42 # Bitwise XOR
-print ~88     # Bitwise NOT (這個是補數)
+print ~88     # Bitwise NOT (這是補數運算ｓ)
+
 bin(x) # 用string回傳x的２進位表示式
 oct(x) # 用string回傳x的８進位表示式
 hex(x) # 用string回傳x的16進位表示式
