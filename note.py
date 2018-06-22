@@ -172,3 +172,27 @@ func() # a = 1, b = [3]
 # 上面lock第一篇很神
 # 為什麼需要RLock ? > https://blog.csdn.net/karchar/article/details/52372702
 # 可以做好幾個lock來給不同thread用嗎
+
+
+
+# --------------
+# thread的陷阱
+def f1():
+    print "f1 start"
+    time.sleep(2)
+    print "f1 end"
+
+def f2():
+    print "f2 start"
+    time.sleep(2)
+    print "f2 end"
+
+t1 = Thread(target=f1, args=[], name="get_fake_ssn")
+t2 = Thread(target=f2, args=[], name="get_fake_ssn")
+
+t1.setDaemon(True)
+t2.setDaemon(True)
+t1.start()
+t2.start()
+
+# 會發現沒有print end，因為main thread 命令t1和t2開始跑後main就結束了，而setDaemon(True)導致t1、t2跟著掛掉
